@@ -1,0 +1,46 @@
+//colors
+
+
+=media($width)
+    @media only screen and (max-width: $width+ px)
+        @content
+
+=ptSansBold
+    font-family: 'PT Sans', sans-serif
+    font-weight: 700
+
+=fontStile($family, $size, $color)
+    color: $color
+    font-size: $size
+    font-family: $family
+
+
+.container
+    max-width: 1230px
+    position: relative
+    +media(1023)
+        display: block
+
+
+textarea
+    outline: none
+    resize: none
+    &:active, &:focus
+        outline: none
+        resize: none
+
+button
+    outline: none
+    border: none
+    &:active, &:focus
+        outline: none
+        border: none
+
+\:active,:hover,:focus
+    outline: none
+    outline-offset: 0
+
+select
+    -webkit-appearance: none
+    -moz-appearance: none
+    appearance: none

@@ -11,13 +11,12 @@ flow-typed
 
 [options]
 suppress_comment= \\(.\\|\n\\)*\\$FlowIgnore
-module.file_ext=.js
-module.file_ext=.jsx
-module.file_ext=.json
-module.file_ext=.css
-module.file_ext=.less
-module.name_mapper.extension='css' -> 'empty/object'
-module.name_mapper.extension='less' -> 'empty/object'
+module.file_ext = .js
+module.file_ext = .jsx
+module.file_ext = .mjs
+module.file_ext = .json
+module.file_ext = .sass
+module.file_ext = .scss
 
 [strict]
 unclear-type
