@@ -9,7 +9,7 @@ class App extends React.Component {
     constructor() {
         super();
         this.state = {
-            menu: {},
+            menu: [],
         };
     }
     async componentDidMount() {
@@ -23,18 +23,21 @@ class App extends React.Component {
         const dataDecode = decodeURIComponent(escape(window.atob(data.content)));
         const dataJson = JSON.parse(dataDecode);
 
-        console.log(dataJson.menu);
-        // noinspection UnreachableCodeJS
         this.setState({
             menu: dataJson.menu,
         });
     }
-
     render() {
+        const menuItem = () =>
+            this.state.menu.map(({ link, item }) => (
+                <a key={link} href={link}>
+                    {item}
+                </a>
+            ));
+
         return (
             <div className="App">
-                <Header />
-                <div>{this.state.menu.toString()}</div>
+                <Header menuItem={menuItem()} />
             </div>
         );
     }
