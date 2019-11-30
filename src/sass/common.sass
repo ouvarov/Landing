@@ -1,25 +1,32 @@
 //colors
+$green: #96c038
 
 
 =media($width)
     @media only screen and (max-width: $width+ px)
         @content
 
-=ptSansBold
-    font-family: 'PT Sans', sans-serif
-    font-weight: 700
+$ptSansBold: 'PT Sans', sans-serif
 
-=fontStile($family, $size, $color)
+
+=fontStile($family, $weight, $size, $color)
     color: $color
     font-size: $size
     font-family: $family
+    font-weight: $weight
 
 
-.container
-    max-width: 1230px
-    position: relative
-    +media(1023)
-        display: block
+=size($size)
+    height: $size
+    width: $size
+
+.App
+    height: 100vh
+    width: 100vw
+
+.body
+    +size(100%)
+
 
 
 textarea

@@ -1,9 +1,9 @@
 // @flow
 
 import React from 'react';
-import Header from './commponents/Header';
 import './App.sass';
-import './sass/style.sass';
+import Body from './commponents/Body';
+import Loading from './commponents/Loading';
 
 class App extends React.Component {
     constructor() {
@@ -22,13 +22,19 @@ class App extends React.Component {
             .then(res => res.json())
             .then(data => decodeURIComponent(escape(window.atob(data.content))))
             .then(dataJson => JSON.parse(dataJson))
-            .then(menu => this.setState({ menu: menu.menu }))
-            .then(menuConsole => console.log(menuConsole));
+            .then(menu => this.setState({ menu: menu.menu }));
     }
+
     render() {
         return (
             <div className="App">
-                <Header isMenu={this.state.menu} />
+                {this.state === '' ? (
+                    <Loading />
+                ) : (
+                    <>
+                        <Body isMenu={this.state.menu} />
+                    </>
+                )}
             </div>
         );
     }
