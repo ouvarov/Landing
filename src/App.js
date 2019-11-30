@@ -13,31 +13,22 @@ class App extends React.Component {
         };
     }
     async componentDidMount() {
-        const fetchArray = await fetch(
+        fetch(
             `https://api.github.com/repos/ouvarov/React-Build/contents/array.json
 
     `,
             { method: 'GET', credentials: 'same-origin' },
-        );
-        const data = await fetchArray.json();
-        const dataDecode = decodeURIComponent(escape(window.atob(data.content)));
-        const dataJson = JSON.parse(dataDecode);
-
-        this.setState({
-            menu: dataJson.menu,
-        });
+        )
+            .then(res => res.json())
+            .then(data => decodeURIComponent(escape(window.atob(data.content))))
+            .then(dataJson => JSON.parse(dataJson))
+            .then(menu => this.setState({ menu: menu.menu }))
+            .then(menuConsole => console.log(menuConsole));
     }
     render() {
-        const menuItem = () =>
-            this.state.menu.map(({ link, item }) => (
-                <a key={link} href={link}>
-                    {item}
-                </a>
-            ));
-
         return (
             <div className="App">
-                <Header menuItem={menuItem()} />
+                <Header isMenu={this.state.menu} />
             </div>
         );
     }

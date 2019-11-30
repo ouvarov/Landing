@@ -3,16 +3,25 @@
 import React from 'react';
 
 type HeaderProps = {
-    menuItem: () => void,
+    isMenu: Array<Object>,
 };
+const Header = ({ isMenu }: HeaderProps) => {
+    const menuItem = () =>
+        isMenu.map(({ link, item }) => (
+            <a key={link} href={link}>
+                {item}
+            </a>
+        ));
 
-const Header = ({ menuItem }: HeaderProps) => (
-    <div className="header">
-        <div className="container">
-            <div className="header__menu">{menuItem.slice(0, 5)}</div>
-            <div className="header__menu">{menuItem.slice(5, 8)}</div>
+    console.log(isMenu);
+    return (
+        <div className="header">
+            <div className="header__grid">
+                {/* <div className="header__list">{menuItem.slice(0, 5)}</div> */}
+                {/* <div className="header__list">{menuItem.slice(5, 8)}</div> */}
+            </div>
         </div>
-    </div>
-);
+    );
+};
 
 export default Header;
