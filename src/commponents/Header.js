@@ -17,6 +17,9 @@ const Header = ({ isMenu }: HeaderProps) => {
         <div className="header">
             <div className="header__grid">
                 <div className="header__list">{menuItem().slice(0, 5)}</div>
+                <div className="header__logo-wrap">
+                    <i className="header__logo" />
+                </div>
                 <div className="header__list">{menuItem().slice(5, 9)}</div>
             </div>
         </div>

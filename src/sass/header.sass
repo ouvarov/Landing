@@ -2,7 +2,8 @@
     background-color: $green
     height: 80px
     display: flex
-    align-items: center
+    align-items: flex-end
+    position: relative
 
     &__grid
         display: flex
@@ -12,6 +13,25 @@
         max-width: 1110px
         margin: 0 auto
 
+    &__logo-wrap
+        +size(200px)
+        position: absolute
+        top: -60px
+        left: 50%
+        transform: translateX(-50%)
+        background: #fff
+        box-shadow: 0 14px 11px 5px rgba(215, 221, 225, 0.15)
+        border-radius: 100%
+        display: flex
+        align-items: flex-end
+        justify-content: center
+
+    &__logo
+        background: transparent url('./images/base/logo.svg') no-repeat center
+        width: 126px
+        height: 70px
+        display: block
+        margin-bottom: 37px
     &__list
         width: 100%
         max-width: 415px
@@ -24,12 +44,13 @@
     &__item
         +fontStile($ptSansBold, 700, 18px, #fff)
         position: relative
+        margin-bottom: 20px
         &:after
             content: ''
             display: block
             width: calc(100% + 8px)
             height: 4px
-            background-color: #ffffff
+            background-color: #fff
             position: absolute
             bottom: -8px
             left: 50%
