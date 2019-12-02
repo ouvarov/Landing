@@ -1,20 +1,20 @@
 //colors
 $green: #96c038
-
+$gradient: linear-gradient(to top, #fff 0%, #eaf1f0 100%)
 
 =media($width)
     @media only screen and (max-width: $width+ px)
         @content
+//fonts
 
-$ptSansBold: 'PT Sans', sans-serif
-
+$ptSans: 'PT Sans', sans-serif
+$lora: 'Lora', serif
 
 =fontStile($family, $weight, $size, $color)
     color: $color
     font-size: $size
     font-family: $family
     font-weight: $weight
-
 
 =size($size)
     height: $size
@@ -32,18 +32,22 @@ $ptSansBold: 'PT Sans', sans-serif
 textarea
     outline: none
     resize: none
-    &:active, &:focus
+    &:active,
+    &:focus
         outline: none
         resize: none
 
 button
     outline: none
     border: none
-    &:active, &:focus
+    &:active,
+    &:focus
         outline: none
         border: none
 
-\:active,:hover,:focus
+\:active,
+\:hover,
+\:focus
     outline: none
     outline-offset: 0
 
