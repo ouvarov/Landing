@@ -1,7 +1,7 @@
 // @flow
 
 import React from 'react';
-import './App.sass';
+import './index.sass';
 import Body from './commponents/Body';
 import Loading from './commponents/Loading';
 
@@ -26,17 +26,7 @@ class App extends React.Component {
     }
 
     render() {
-        return (
-            <div className="App">
-                {this.state === '' ? (
-                    <Loading />
-                ) : (
-                    <>
-                        <Body isMenu={this.state.menu} />
-                    </>
-                )}
-            </div>
-        );
+        return <div className="App">{this.state === '' ? <Loading /> : <Body isMenu={this.state.menu} />}</div>;
     }
 }
 export default App;

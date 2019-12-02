@@ -1,0 +1,51 @@
+.main
+    background: $gradient
+    padding: 97px 0 34px
+    display: flex
+    justify-content: center
+
+    &__grid
+        width: 100%
+        max-width: 522px
+        text-align: center
+
+    &__headline
+        +fontStile($lora, 400, 16px, #000)
+        position: relative
+        &--highlighted
+            padding-bottom: 15px
+            &:after,
+            &:before
+                content: ''
+                display: block
+                position: absolute
+                top: 10px
+                left: -75px
+                transform: translateY(-50%)
+                width: 217px
+                height: 1px
+                background-color: #b8b8b8
+                opacity: 0.3
+            &:before
+                left: auto
+                right: -75px
+        &--big
+            font-size: 48px
+            letter-spacing: 0.48px
+            line-height: 42px
+            font-variant: small-caps
+        &--offset
+            position: absolute
+            right: -35px
+            top: 20px
+    &__footer
+        padding-top: 30px
+        position: relative
+
+    &__images
+        margin: 100px auto 0
+        display: block
+        width: 501px
+        height: 256px
+        background: transparent url('./images/portfolio/burger.png') no-repeat center
+        background-size: contain
