@@ -3,14 +3,16 @@
 import React from 'react';
 import Header from './Header';
 import MainSection from './MainSection';
+import WhyWeSection from './WhyWeSection';
 
 type BodyProps = {
-    isMenu: Array<Object>,
+    nav: Array<Object>,
 };
-const Body = ({ isMenu }: BodyProps) => (
+const Body = ({ nav }: BodyProps) => (
     <div className="body">
-        <Header isMenu={isMenu} />
+        <Header nav={nav} />
         <MainSection />
+        <WhyWeSection />
     </div>
 );
 

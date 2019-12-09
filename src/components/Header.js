@@ -2,25 +2,28 @@
 
 import React from 'react';
 
-type HeaderProps = {
-    isMenu: Array<Object>,
+type HeaderNavItem = {
+    link: string,
+    item: string,
 };
-const Header = ({ isMenu }: HeaderProps) => {
-    const menuItem = () =>
-        isMenu.map(({ link, item }) => (
+type HeaderProps = {
+    nav: HeaderNavItem[],
+};
+const Header = ({ nav }: HeaderProps) => {
+    const renderNavItem = () =>
+        nav.map(({ link, item }) => (
             <a key={link} href={link} className="header__item">
                 {item}
             </a>
         ));
-
     return (
         <div className="header">
             <div className="header__grid">
-                <div className="header__list">{menuItem().slice(0, 5)}</div>
+                <nav className="header__list">{renderNavItem().slice(0, 5)}</nav>
                 <div className="header__logo-wrap">
                     <i className="header__logo" />
                 </div>
-                <div className="header__list">{menuItem().slice(5, 9)}</div>
+                <nav className="header__list">{renderNavItem().slice(5, 9)}</nav>
             </div>
         </div>
     );

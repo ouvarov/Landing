@@ -2,31 +2,29 @@
 
 import React from 'react';
 import './index.sass';
-import Body from './commponents/Body';
-import Loading from './commponents/Loading';
+import Body from './components/Body';
+import Loading from './components/Loading';
 
 class App extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            menu: [],
-        };
-    }
-    async componentDidMount() {
-        fetch(
-            `https://api.github.com/repos/ouvarov/React-Build/contents/array.json
+    state = {
+        loaded: false,
+        nav: [],
+    };
+    componentDidMount() {
+        const arrayApi = `https://api.github.com/repos/ouvarov/React-Build/contents/array.json`;
 
-    `,
-            { method: 'GET', credentials: 'same-origin' },
-        )
+        fetch(arrayApi, { method: 'GET', credentials: 'same-origin' })
             .then(res => res.json())
             .then(data => decodeURIComponent(escape(window.atob(data.content))))
             .then(dataJson => JSON.parse(dataJson))
-            .then(menu => this.setState({ menu: menu.menu }));
+            .then(({ nav }) => {
+                this.setState({ nav });
+                this.setState({ loaded: true });
+            });
     }
 
     render() {
-        return <div className="App">{this.state === '' ? <Loading /> : <Body isMenu={this.state.menu} />}</div>;
+        return <div className="App">{this.state.loaded ? <Body nav={this.state.nav} /> : <Loading />}</div>;
     }
 }
 export default App;
