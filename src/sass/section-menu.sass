@@ -1,0 +1,132 @@
+.section-menu
+    padding: 64px 0 70px
+    background: transparent url('./images/portfolio/menu_bg.jpg') center
+    background-size: cover
+    @import 'alice-carousel'
+
+    &__card
+        background: $light-blue
+        margin: 0 auto 40px
+        width: 100%
+        max-width: 874px
+        display: flex
+        position: relative
+        &--soup,
+        &--dessert
+            flex-direction: row-reverse
+            .section-menu
+                &__card-type
+                    left: 15px
+                    right: auto
+                &__title,
+                &__subtitle
+                    text-align: right
+                &__header-wrap
+                    margin-right: 33px
+                    &:after
+                        left: auto
+                        right: 0
+            .alice-carousel
+                padding: 0 30px 0 62px
+                &__prev-btn,
+                &__next-btn
+                    right: auto
+                    left: 0
+        &--sandwich
+            .section-menu
+                &__card-type
+                    background-image: url('./images/icon/sandwich_icon.png')
+        &--soup
+            .section-menu
+                &__card-type
+                    background-image: url('./images/icon/soup_icon.png')
+        &--salad
+            .section-menu
+                &__card-type
+                    background-image: url('./images/icon/salad_icon.png')
+        &--dessert
+            .section-menu
+                &__card-type
+                    background-image: url('./images/icon/dessert_icon.png')
+    &__card-type
+        width: 67px
+        height: 100px
+        display: inline-block
+        background: $green no-repeat center bottom 30px
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 82%, 0 100%)
+        position: absolute
+        right: 15px
+        top: -15px
+    &__sub-card
+        display: flex
+        flex-direction: column
+        min-height: 280px
+        width: 150px
+        background: #fff
+    &__headline
+        +fontStile($ptSans, 700, 24px, #fff)
+        text-align: center
+        padding: 35px 0 66px
+    &__headline-icon
+        +size(70px)
+        border-radius: 50%
+        background: #fff url('./images/icon/menu_icon.png') no-repeat center
+        margin: 0 auto
+    &__main-icon
+        width: 308px
+        height: 430px
+        background: transparent no-repeat center
+    &__menu-icon
+        width: 150px
+        height: 90px
+    &__header-wrap
+        padding: 36px 0 25px
+        position: relative
+        margin-left: 33px
+        &:after
+            content: ''
+            position: absolute
+            display: block
+            left: 0
+            bottom: 16px
+            width: 80%
+            height: 1px
+            background: rgba($text-grey, 50%)
+    &__title
+        +fontStile($ptSans, 700, 36px, $green)
+    &__subtitle
+        +fontStile($lora, 400, 14px, $dark)
+        line-height: 24px
+    &__inner-wrap
+        width: calc(100% - 308px)
+    &__slider
+        width: 100%
+    &__inner-content
+        min-height: 117px
+        padding: 20px 6px 0 13px
+    &__sub-card-wrap
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        flex: 1
+    &__price
+        +fontStile($lora, 400, 18px, $green)
+    &__menu-name
+        +fontStile($ptSans, 700, 14px, $dark)
+        height: 36px
+        display: flex
+        align-items: center
+    &__description
+        +fontStile($lora, 400, 11px, $dark)
+    &__button
+        +fontStile($ptSans, 700, 12px, #fff)
+        +hover(rgba($green, .5))
+        width: 107px
+        height: 30px
+        background: $green
+        display: flex
+        align-items: center
+        justify-content: center
+        letter-spacing: 0.025em
+        text-transform: uppercase
+        margin: 14px 0 9px 13px
