@@ -1,0 +1,91 @@
+.about
+    padding: 45px 0 240px
+    background: $dark
+
+    &__grid
+        max-width: 940px
+        width: 100%
+        margin: 0 auto
+
+    &__headline-icon
+        display: block
+        margin: 0 auto 35px
+        +size(70px)
+        background: #fff url('./images/icon/about-hedline.svg') no-repeat center
+        border-radius: 50%
+
+    &__headline
+        +fontStile($ptSans, 700, 24px, #fff)
+        text-align: center
+        padding-bottom: 182px
+
+    &__image-wrap
+        +size(150px)
+        border-radius: 50%
+        border: 8px solid #fff
+        position: relative
+        &:after
+            content: ''
+            +size(11px)
+            display: block
+            position: absolute
+            bottom: -13px
+            left: 50%
+            transform: translateX(-50%)
+            border-radius: 50%
+            background: $green
+        &--main
+            +size(200px)
+        &--top
+            &:after
+                bottom: auto
+                top: -13px
+
+    &__image
+        +size(100%)
+        border-radius: 50%
+        display: block
+        background: transparent no-repeat center
+        &--vegetables
+            background-image: url('./images/portfolio/vegetables.svg')
+        &--calendar
+            background-image: url('./images/portfolio/calendar.svg')
+        &--chef
+            background-image: url('./images/portfolio/chef-circle.svg')
+        &--sauce
+            background-image: url('./images/portfolio/sauce.svg')
+        &--kitchen
+            background-image: url('./images/portfolio/kitchen.svg')
+
+    &__wrap
+        display: flex
+        align-items: flex-start
+        justify-content: space-between
+
+    &__title
+        +fontStile($ptSans, 700, 18px, $green)
+        line-height: 30px
+        &--main
+            font-size: 24px
+
+    &__content
+        +fontStile($lora, 400, 14px, $text-grey)
+        &--main
+            font-size: 18px
+    &__item
+        position: relative
+        &:first-child,
+        &:last-child
+            margin-top: 53px
+
+    &__content-wrap
+        position: absolute
+        left: 50%
+        transform: translateX(-50%)
+        top: calc(100% + 22px)
+        width: 230px
+        text-align: center
+        &--main
+            width: 400px
+        &--top
+            top: calc(-100% + 22px)

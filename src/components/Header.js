@@ -1,21 +1,19 @@
 // @flow
 
 import React from 'react';
+import type { NavItemType } from '../App';
 
-type HeaderNavItem = {
-    link: string,
-    item: string,
-};
 type HeaderProps = {
-    nav: HeaderNavItem[],
+    navItem: NavItemType,
 };
-const Header = ({ nav }: HeaderProps) => {
+const Header = ({ navItem }: HeaderProps) => {
     const renderNavItem = () =>
-        nav.map(({ link, item }) => (
+        navItem.map(({ link, item }) => (
             <a key={link} href={link} className="header__item">
                 {item}
             </a>
         ));
+
     return (
         <div className="header">
             <div className="header__grid">

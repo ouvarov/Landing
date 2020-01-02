@@ -1,0 +1,32 @@
+.alice-carousel
+    padding: 0 55px 0 30px
+    position: relative
+    &__next-btn,
+    &__prev-btn
+        +size(30px)
+        position: absolute
+        right: 0
+        top: calc(50% - 96px)
+        font-size: 0
+        background: $grey url('./images/icon/slider_arrow.png') no-repeat center
+        &:hover
+            background-color: $green
+    &__prev-btn
+        top: calc(50% - 56px)
+        transform: rotate(180deg)
+    &__next-btn-item,
+    &__next-btn-wrapper,
+    &__prev-btn-wrapper,
+    &__prev-btn-item
+        position: absolute
+        top: 0
+        left: 0
+        +size(100%)
+        display: block
+        > span
+            +size(100%)
+            display: block
+    .section-menu
+        &__menu-name,
+        &__description
+            line-height: 14px

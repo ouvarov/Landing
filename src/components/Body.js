@@ -3,16 +3,20 @@
 import React from 'react';
 import Header from './Header';
 import MainSection from './MainSection';
-import WhyWeSection from './WhyWeSection';
+import AboutSection from './AboutSection';
+import MenuSection from './MenuSection';
+import type { NavItemType, MenuItem } from '../App';
 
 type BodyProps = {
-    nav: Array<Object>,
+    navItem: NavItemType,
+    menu: MenuItem,
 };
-const Body = ({ nav }: BodyProps) => (
+const Body = ({ navItem, menu }: BodyProps) => (
     <div className="body">
-        <Header nav={nav} />
+        <Header navItem={navItem} />
         <MainSection />
-        <WhyWeSection />
+        <AboutSection />
+        <MenuSection menu={menu} />
     </div>
 );
 
